@@ -26,7 +26,7 @@
         </ul>
     </div>
 </nav>
-<main class="mt-3 mx-auto" style="width: 80%;">
+<main class="mt-3 mx-auto" style="width: 70%;">
     <h1>
         List of Products
     </h1>
