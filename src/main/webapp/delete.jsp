@@ -18,7 +18,7 @@
 <%
     Product p = null;
 
-    if (request.getParameter("id") != null && !request.getParameter("id").equals("")) {
+    if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
         ProductDAO dao = new ProductDAO();
         p = dao.getProductById(request.getParameter("id"));
 
