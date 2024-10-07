@@ -1,1 +1,5 @@
-This project is compiled with JDK 21 and tested with Tomcat Server 10.1.28. The JDBC used is mssql-jdbc-12.8.1.jre11.
+# Requirement
+This project was developed and tested with these specification:
++ OpenJDK 21
++ Tomcat 10.1.28
++ MSSQL-JDBC-12.8.1.JRE11
