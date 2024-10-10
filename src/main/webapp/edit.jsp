@@ -22,7 +22,7 @@
         String id = request.getParameter("txtID");
         String name = request.getParameter("txtName");
         int price = Integer.parseInt(request.getParameter("txtPrice"));
-        int quant = Integer.parseInt(request.getParameter("txtQuant"));
+        int quant = Integer.parseInt(request.getParameter("txtQuan"));
         String des = request.getParameter("txtDes");
         String cat = request.getParameter("cboCat");
 
@@ -58,7 +58,7 @@
         </ul>
     </div>
 </nav>
-<main class="mt-3 mx-2 float-end" style="width: 80%">
+<main class="container mt-3 mx-2 float-end" style="width: 80%">
     <h2>
         Edit
     </h2>
@@ -88,7 +88,7 @@
         <div class="form-group row my-2">
             <label for="pro_quantity" class="col-sm-2 col-form-label text-end">Quantity</label>
             <div class="col-sm-10">
-                <input value="<%=p.getQuantity()%>" type="number" name="txtQuant" class="form-control" id="pro_quantity"
+                <input value="<%=p.getQuantity()%>" type="number" name="txtQuan" class="form-control" id="pro_quantity"
                        required>
             </div>
         </div>

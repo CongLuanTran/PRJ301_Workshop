@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
+<body class="container">
 <%
     Product p = null;
 
@@ -41,7 +41,7 @@
         </ul>
     </div>
 </nav>
-<main class="mt-3 mx-2 float-end" style="width: 80%">
+<main class="container mt-3 mx-2 float-end" style="width: 80%">
     <h2>
         Delete
     </h2>
@@ -76,7 +76,7 @@
         <div class="form-group row my-2">
             <label for="pro_quantity" class="col-sm-2 col-form-label text-end">Quantity</label>
             <div class="col-sm-10">
-                <input value="<%=p.getQuantity()%>" type="number" name="txtQuant" class="form-control disabled"
+                <input value="<%=p.getQuantity()%>" type="number" name="txtQuan" class="form-control disabled"
                        id="pro_quantity"
                        required readonly disabled>
             </div>
