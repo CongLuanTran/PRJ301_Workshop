@@ -24,9 +24,11 @@
 
         if (p == null) {
             response.sendRedirect("index.jsp");
+            return;
         }
     } else {
         response.sendRedirect("index.jsp");
+        return;
     }
 %>
 <nav class="navbar navbar-dark bg-dark py-0">

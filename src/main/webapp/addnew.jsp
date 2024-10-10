@@ -30,8 +30,10 @@
         int count = dao.addProduct(p);
         if (count > 0) {
             response.sendRedirect("index.jsp");
+            return;
         } else {
             response.sendRedirect("addnew.jsp");
+            return;
         }
     }
 %>
