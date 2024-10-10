@@ -16,37 +16,17 @@
 </head>
 <body>
 <%
-    Product p = null;
-
-    if (request.getParameter("btnSave") != null) {
-        String id = request.getParameter("txtID");
-        String name = request.getParameter("txtName");
-        int price = Integer.parseInt(request.getParameter("txtPrice"));
-        int quant = Integer.parseInt(request.getParameter("txtQuan"));
-        String des = request.getParameter("txtDes");
-        String cat = request.getParameter("cboCat");
-
-        p = new Product(id, name, quant, price, des, cat);
-        ProductDAO dao = new ProductDAO();
-
-        int count = dao.editProduct(p);
-        if (count > 0) {
+    if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
+        Product p = null;
+        try {
+            ProductDAO dao = new ProductDAO();
+            p = dao.getProductById(request.getParameter("id"));
+        } catch (Exception e) {
             response.sendRedirect("index.jsp");
-        } else {
-            response.sendRedirect("edit.jsp");
         }
-    } else if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
-        ProductDAO dao = new ProductDAO();
-        p = dao.getProductById(request.getParameter("id"));
-
         if (p == null) {
             response.sendRedirect("index.jsp");
-            return;
-        }
-    } else {
-        response.sendRedirect("index.jsp");
-        return;
-    }
+        } else {
 %>
 <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container-fluid justify-content-start">
@@ -64,11 +44,11 @@
     </h2>
     Product
     <hr>
-    <form action="" method="get">
+    <form action="Edit" method="post">
         <div class="form-group row my-2">
             <label for="pro_id" class="col-sm-2 col-form-label text-end">Product ID</label>
             <div class="col-sm-10 float-end">
-                <input value="<%=p.getId()%>" type="text" name="txtID" class="form-control disabled" id="pro_id"
+                <input value="<%=p.getId()%>" type="text" name="txtID" class="form-control" id="pro_id"
                        required readonly>
             </div>
         </div>
@@ -120,11 +100,16 @@
         <div class="d-flex justify-content-end">
             <div class="col-sm-10">
                 <input name="btnSave" type="submit" class="btn btn-primary" value="Save">
-                <a href="index.jsp" class="btn btn-danger">Back to list</a>
+                <a href="List" class="btn btn-danger">Back to list</a>
             </div>
         </div>
     </form>
 </main>
-
+<%
+        }
+    } else {
+        response.sendRedirect("List");
+    }
+%>
 </body>
 </html>

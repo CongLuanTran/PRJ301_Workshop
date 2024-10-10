@@ -8,7 +8,7 @@ import java.io.IOException;
 public class List extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getParameter("id") != null || !request.getParameter("id").isEmpty()) {
+        if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
             String id = request.getParameter("id");
             ProductDAO dao = new ProductDAO();
             dao.deleteProduct(id);
