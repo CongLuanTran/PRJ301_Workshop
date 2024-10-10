@@ -22,9 +22,9 @@ public class DBConnection {
                     "trustServerCertificate=true;";
             conn = DriverManager.getConnection(url);
         } catch (ClassNotFoundException e) {
-            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, e);
         } catch (SQLException e) {
-            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, e);
         }
         return conn;
     }
@@ -35,7 +35,7 @@ public class DBConnection {
                 conn.close();
             }
         } catch (SQLException e) {
-            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 }
