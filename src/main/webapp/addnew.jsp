@@ -53,7 +53,7 @@
     </h2>
     Product
     <hr>
-    <form action="" method="post">
+    <form action="" method="get">
         <div class="form-group row my-2">
             <label for="pro_id" class="col-sm-2 col-form-label text-end">Product ID</label>
             <div class="col-sm-10 float-end">

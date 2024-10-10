@@ -9,13 +9,6 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<%
-    if (request.getParameter("btnDelete") != null) {
-        String id = request.getParameter("txtProID");
-        ProductDAO dao = new ProductDAO();
-        dao.deleteProduct(id);
-    }
-%>
 <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container-fluid justify-content-start">
         <a href="index.jsp" class="navbar-brand">PRJ301</a>

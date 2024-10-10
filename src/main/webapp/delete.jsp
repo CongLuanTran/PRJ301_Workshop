@@ -50,7 +50,7 @@
     </h3>
     Product
     <hr>
-    <form action="index.jsp" method="post">
+    <form action="index.jsp" method="get">
         <div class="form-group row my-2">
             <label for="pro_id" class="col-sm-2 col-form-label text-end">Product ID</label>
             <div class="col-sm-10 float-end">
