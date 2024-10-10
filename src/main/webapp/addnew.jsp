@@ -15,28 +15,6 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<%
-    if (request.getParameter("btnCreate") != null) {
-        String id = request.getParameter("txtID");
-        String name = request.getParameter("txtName");
-        int price = Integer.parseInt(request.getParameter("txtPrice"));
-        int quant = Integer.parseInt(request.getParameter("txtQuan"));
-        String des = request.getParameter("txtDes");
-        String cat = request.getParameter("cboCat");
-
-        Product p = new Product(id, name, quant, price, des, cat);
-        ProductDAO dao = new ProductDAO();
-
-        int count = dao.addProduct(p);
-        if (count > 0) {
-            response.sendRedirect("index.jsp");
-            return;
-        } else {
-            response.sendRedirect("index.jsp");
-            return;
-        }
-    }
-%>
 <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container-fluid justify-content-start">
         <a href="index.jsp" class="navbar-brand">PRJ301</a>
@@ -53,7 +31,7 @@
     </h2>
     Product
     <hr>
-    <form action="" method="get">
+    <form action="Create" method="post">
         <div class="form-group row my-2">
             <label for="pro_id" class="col-sm-2 col-form-label text-end">Product ID</label>
             <div class="col-sm-10 float-end">
@@ -109,6 +87,5 @@
         </div>
     </form>
 </main>
-
 </body>
 </html>

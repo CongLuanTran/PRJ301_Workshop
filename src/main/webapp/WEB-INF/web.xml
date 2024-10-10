@@ -8,16 +8,24 @@
         <servlet-class>org.example.workshop01.Controllers.List</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Create</servlet-name>
+        <servlet-class>org.example.workshop01.Controllers.Create</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Edit</servlet-name>
         <servlet-class>org.example.workshop01.Controllers.Edit</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Edit</servlet-name>
-        <url-pattern>/Edit</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>List</servlet-name>
         <url-pattern>/List</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Create</servlet-name>
+        <url-pattern>/Create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Edit</servlet-name>
+        <url-pattern>/Edit</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>List</welcome-file>
