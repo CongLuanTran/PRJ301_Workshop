@@ -1,21 +1,16 @@
 package org.example.workshop01.Controllers;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import org.example.workshop01.DAOs.ProductDAO;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
 public class List extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
-            String id = request.getParameter("id");
-            ProductDAO dao = new ProductDAO();
-            dao.deleteProduct(id);
-            response.sendRedirect("List");
-        } else {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        }
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     @Override

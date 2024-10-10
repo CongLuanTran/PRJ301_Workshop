@@ -10,26 +10,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Delete</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="container">
 <%
-    Product p = null;
-
     if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
-        ProductDAO dao = new ProductDAO();
-        p = dao.getProductById(request.getParameter("id"));
-
+        Product p = null;
+        try {
+            ProductDAO dao = new ProductDAO();
+            p = dao.getProductById(request.getParameter("id"));
+        } catch (Exception e) {
+            response.sendRedirect("index.jsp");
+        }
         if (p == null) {
             response.sendRedirect("index.jsp");
-            return;
-        }
-    } else {
-        response.sendRedirect("index.jsp");
-        return;
-    }
+        } else {
 %>
 <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container-fluid justify-content-start">
@@ -50,7 +48,7 @@
     </h3>
     Product
     <hr>
-    <form action="index.jsp" method="get">
+    <form action="Delete" method="post">
         <div class="form-group row my-2">
             <label for="pro_id" class="col-sm-2 col-form-label text-end">Product ID</label>
             <div class="col-sm-10 float-end">
@@ -109,11 +107,16 @@
         <div class="d-flex justify-content-end">
             <div class="col-sm-10">
                 <input name="btnDelete" type="submit" class="btn btn-primary" value="Delete">
-                <a href="index.jsp" class="btn btn-danger">Back to list</a>
+                <a href="List" class="btn btn-danger">Back to list</a>
             </div>
         </div>
     </form>
 </main>
-
+<%
+        }
+    } else {
+        response.sendRedirect("List");
+    }
+%>
 </body>
 </html>
