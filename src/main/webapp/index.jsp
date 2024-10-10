@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Products</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -53,8 +54,8 @@
             <td><%=rs.getString("cat_name")%>
             </td>
             <td>
-                <a href="edit.jsp?id=<%=rs.getString("pro_id")%>" role="button" class="btn btn-success">Edit</a>
-                <a href="delete.jsp?id=<%=rs.getString("pro_id")%>" role="button" class="btn btn-danger">Delete</a>
+                <a href="Edit?id=<%=rs.getString("pro_id")%>" role="button" class="btn btn-success">Edit</a>
+                <a href="Delete?id=<%=rs.getString("pro_id")%>" role="button" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         <%
