@@ -1,4 +1,4 @@
-USE [workshop01]
+USE [workshop02]
 GO
 /****** Object:  Table [dbo].[category]    Script Date: 10/15/2024 2:54:25 PM ******/
 SET ANSI_NULLS ON
