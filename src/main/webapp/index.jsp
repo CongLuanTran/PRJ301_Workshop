@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container-fluid justify-content-start">
-        <a href="List" class="navbar-brand">PRJ301</a>
+        <a href="#" class="navbar-brand">PRJ301</a>
         <ul class="navbar-nav px-2 py-1" style="background-color: black">
             <li class="nav-item">
                 <a href="List" class="nav-link active" aria-current="page">Products</a>
@@ -24,7 +24,7 @@
     <h1>
         List of Products
     </h1>
-    <a type="role" class="btn btn-primary my-2" href="addnew.jsp">Add New</a>
+    <a type="role" class="btn btn-primary my-2" href="Create">Add New</a>
     <table class="table table-bordered">
         <tr>
             <th>ID</th>

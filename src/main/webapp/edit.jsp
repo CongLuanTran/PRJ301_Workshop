@@ -23,18 +23,18 @@
             ProductDAO dao = new ProductDAO();
             p = dao.getProductById(request.getParameter("id"));
         } catch (Exception e) {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("List");
         }
         if (p == null) {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("List");
         } else {
 %>
 <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container-fluid justify-content-start">
-        <a href="index.jsp" class="navbar-brand">PRJ301</a>
+        <a href="#" class="navbar-brand">PRJ301</a>
         <ul class="navbar-nav px-2 py-1" style="background-color: black">
             <li class="nav-item">
-                <a href="index.jsp" class="nav-link active" aria-current="page">Products</a>
+                <a href="List" class="nav-link active" aria-current="page">Products</a>
             </li>
         </ul>
     </div>
